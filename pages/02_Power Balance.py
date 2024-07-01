@@ -7,8 +7,8 @@ import re
 st.markdown("# Power Balance Analysis")
 
 df_power_balance = pd.read_csv("results/power_balance.csv")
-df_markets_sales = pd.read_csv("results/Market_sales.csv")
-df_markets_purchases = pd.read_csv("results/Market_purchases.csv")
+df_markets_sales = pd.read_csv("results/market_sales.csv")
+df_markets_purchases = pd.read_csv("results/market_purchases.csv")
 df_net_market= pd.DataFrame({"BalanceComponent":[f"t{i+1}" for i in range(0,df_markets_sales.shape[0])]})
 df_net_market["Market_sales"] = list(df_markets_sales.sum(axis=1))
 df_net_market["Market_sales"] *= -1
