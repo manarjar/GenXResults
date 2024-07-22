@@ -64,11 +64,12 @@ def resources_maxcapreq():
     return df_resources_maxcapreq_input_long
 
 
+
 ###########################
 
 st.markdown("## Maximum Capacity Requirement")
 st.markdown("### Prices and penalties")
-df_maxcapreq_policy = helpers.policy_maxcapreq()
+df_maxcapreq_policy = policy_maxcapreq()
 df_maxcapreq_policy.drop(columns=["Constraint"], inplace= True)
 df_maxcapreq_policy.rename(columns={"ConstraintDescription": "Constraint"}, inplace=True)
 st.dataframe(df_maxcapreq_policy, use_container_width=True)
@@ -77,7 +78,7 @@ st.markdown("### Resource-policy assignment")
 selected_policy = st.selectbox(label= "Select policy to list associated resources",
                                options= df_maxcapreq_policy["Constraint"])
 
-df_resources_maxcapreq =  helpers.resources_maxcapreq()
+df_resources_maxcapreq =  resources_maxcapreq()
 df_resources_maxcapreq = df_resources_maxcapreq[["Constraint", "Resource"]]
 df_resources_maxcapreq= df_resources_maxcapreq[df_resources_maxcapreq["Constraint"] == selected_policy]
 df_resources_maxcapreq.reset_index(inplace=True, drop=True)
