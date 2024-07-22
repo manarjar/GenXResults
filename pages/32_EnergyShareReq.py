@@ -26,7 +26,7 @@ def read_esr_results():
     return df_esr_results
 
 
-file_path_settings = "inputs\settings\genx_settings.yml" 
+file_path_settings = "inputs\\settings\\genx_settings.yml" 
 # Open the file and load the YAML content
 with open(file_path_settings, 'r') as file:
     settings = yaml.safe_load(file)

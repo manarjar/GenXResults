@@ -10,8 +10,9 @@ import yaml
 ############################
 ##      Helper Functions  ##
 ############################
+
 def policy_maxcapreq():
-    file_path_settings = "inputs\settings\genx_settings.yml"  
+    file_path_settings = "inputs\\settings\\genx_settings.yml"  
     df_maxcapreq_input = pd.DataFrame()
     df_maxcapreq_results = pd.DataFrame()
     
@@ -20,7 +21,7 @@ def policy_maxcapreq():
         settings = yaml.safe_load(file)
 
     if 'MaxCapReq' in settings.keys():
-        file_path_input = "inputs\policies\Maximum_capacity_requirement.csv"  # Replace with your CSV file path
+        file_path_input = "inputs\\policies\\Maximum_capacity_requirement.csv"  # Replace with your CSV file path
         if os.path.isfile(file_path_input):
             # File exists, so read it
             try:
@@ -30,7 +31,7 @@ def policy_maxcapreq():
             except Exception as e:
                 st.markdown(f"An error occurred while reading the file: {e}")
 
-        file_path_results = "results/MaxCapReq_prices_and_penalties.csv"  # Replace with your CSV file path
+        file_path_results = "results\\MaxCapReq_prices_and_penalties.csv"  # Replace with your CSV file path
         if os.path.isfile(file_path_results):
             # File exists, so read it
             try:
