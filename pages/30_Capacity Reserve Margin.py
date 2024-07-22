@@ -55,9 +55,10 @@ with open(file_path_settings, 'r') as file:
 st.markdown("# Capacity Reserve Margin")
 
 if ("CapacityReserveMargin" in settings.keys()) & (settings["CapacityReserveMargin"]==1):
-    st.dataframe(read_cap_res_margin_inputs(), use_container_width=True)
+    st.dataframe(read_cap_res_margin_inputs(), use_container_width=True, hide_index=True)
 
+    st.markdown("### Shadow prices of the capacity reserve margin constraints")
     df_annual_cap_res_margin = read_annual_cap_res_margin()
-    st.line_chart(data=df_annual_cap_res_margin, x_label="Hour", y_label="Power(MW)")
+    st.line_chart(data=df_annual_cap_res_margin, x_label="Hour")
 else:
     st.markdown("### Capacity reserve margin is deactivated in settings file")
