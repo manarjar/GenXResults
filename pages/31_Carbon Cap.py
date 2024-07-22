@@ -9,7 +9,7 @@ import yaml
 
 
 def read_co2_cap_policy():
-    file_path = "inputs\policies\CO2_cap.csv"  # Replace with your CSV file path
+    file_path = "inputs/policies/CO2_cap.csv"  # Replace with your CSV file path
     df_co2_policy = pd.DataFrame()
     if os.path.isfile(file_path):
         # File exists, so read it
@@ -41,7 +41,7 @@ def read_co2_cap_penalties():
 
 
 def read_co2_emissions():
-    file_path = "results\emissions.csv"  # Replace with your CSV file path
+    file_path = "results/emissions.csv"  # Replace with your CSV file path
     df_co2_emissions = pd.DataFrame()
     if os.path.isfile(file_path):
         # File exists, so read it
@@ -60,7 +60,7 @@ def read_co2_emissions():
     return df_co2_emissions
 
 def read_co2_emissions_plant():
-    file_path = "results\emissions_plant.csv"  # Replace with your CSV file path
+    file_path = "results/emissions_plant.csv"  # Replace with your CSV file path
     df_co2 = pd.DataFrame()
     if os.path.isfile(file_path):
         # File exists, so read it

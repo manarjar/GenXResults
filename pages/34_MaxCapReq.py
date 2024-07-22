@@ -12,7 +12,7 @@ import yaml
 ############################
 
 def policy_maxcapreq():
-    file_path_settings = "inputs\\settings\\genx_settings.yml"  
+    file_path_settings = "inputs/settings/genx_settings.yml"  
     df_maxcapreq_input = pd.DataFrame()
     df_maxcapreq_results = pd.DataFrame()
     
@@ -21,7 +21,7 @@ def policy_maxcapreq():
         settings = yaml.safe_load(file)
 
     if 'MaxCapReq' in settings.keys():
-        file_path_input = "inputs\\policies\\Maximum_capacity_requirement.csv"  # Replace with your CSV file path
+        file_path_input = "inputs/policies/Maximum_capacity_requirement.csv"  # Replace with your CSV file path
         if os.path.isfile(file_path_input):
             # File exists, so read it
             try:
@@ -31,7 +31,7 @@ def policy_maxcapreq():
             except Exception as e:
                 st.markdown(f"An error occurred while reading the file: {e}")
 
-        file_path_results = "results\\MaxCapReq_prices_and_penalties.csv"  # Replace with your CSV file path
+        file_path_results = "results/MaxCapReq_prices_and_penalties.csv"  # Replace with your CSV file path
         if os.path.isfile(file_path_results):
             # File exists, so read it
             try:
@@ -45,7 +45,7 @@ def policy_maxcapreq():
         return df_maxcapreq_input.round(3)
     
 def resources_maxcapreq():
-    file_path_input = "inputs\\resources\\policy_assignments\\Resource_maximum_capacity_requirement.csv"  # Replace with your CSV file path
+    file_path_input = "inputs/resources/policy_assignments/Resource_maximum_capacity_requirement.csv"  # Replace with your CSV file path
     df_resources_maxcapreq_input = pd.read_csv(file_path_input)
 
     df_resources_maxcapreq_input.set_index("Resource", inplace= True)
