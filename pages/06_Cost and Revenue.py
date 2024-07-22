@@ -12,7 +12,7 @@ import yaml
 ####################################################
 
 def read_costs():
-    file_path = "results\costs.csv"  # Replace with your CSV file path
+    file_path = "results/costs.csv"  # Replace with your CSV file path
     df_costs = pd.DataFrame()
     if os.path.isfile(file_path):
         # File exists, so read it
