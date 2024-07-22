@@ -78,6 +78,11 @@ def read_co2_emissions_plant():
 
 file_path_settings = "inputs\\settings\\genx_settings.yml" 
 # Open the file and load the YAML content
+if os.path.isfile(file_path_settings):
+    st.markdown("the file found")
+else:
+    st.markdown(f"Attempting to open file: {file_path_settings}")
+       
 with open(file_path_settings, 'r') as file:
     settings = yaml.safe_load(file)
 
