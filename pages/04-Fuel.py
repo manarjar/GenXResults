@@ -6,7 +6,7 @@ import os
 from datetime import datetime, timedelta
 
 def read_Fuel_cost_plant():
-    file_path = "results\Fuel_cost_plant.csv"  # Replace with your CSV file path
+    file_path = "results/Fuel_cost_plant.csv"  # Replace with your CSV file path
     df_fuel = pd.DataFrame()
     if os.path.isfile(file_path):
         # File exists, so read it
@@ -21,7 +21,7 @@ def read_Fuel_cost_plant():
 
 
 def read_plant_fuel_consumption():
-    file_path = "results\FuelConsumption_plant_MMBTU.csv"  # Replace with your CSV file path
+    file_path = "results/FuelConsumption_plant_MMBTU.csv"  # Replace with your CSV file path
     df_fuel = pd.DataFrame()
     if os.path.isfile(file_path):
         # File exists, so read it
@@ -36,7 +36,7 @@ def read_plant_fuel_consumption():
     return df_fuel
 
 def read_total_fuel_consumption():
-    file_path = "results\FuelConsumption_total_MMBTU.csv"  # Replace with your CSV file path
+    file_path = "results/FuelConsumption_total_MMBTU.csv"  # Replace with your CSV file path
     df_fuel = pd.DataFrame()
     if os.path.isfile(file_path):
         # File exists, so read it

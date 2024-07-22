@@ -12,7 +12,7 @@ import yaml
 #####################################
 
 def read_cap_res_margin_inputs():
-    file_path = "inputs\policies\Capacity_reserve_margin.csv"  # Replace with your CSV file path
+    file_path = "inputs/policies/Capacity_reserve_margin.csv"  # Replace with your CSV file path
     df_cap_res_margin_input = pd.DataFrame()
     if os.path.isfile(file_path):
         # File exists, so read it
@@ -28,7 +28,7 @@ def read_cap_res_margin_inputs():
 
 
 def read_annual_cap_res_margin():
-    file_path = "results\ReserveMargin_w.csv"  # Replace with your CSV file path
+    file_path = "results/ReserveMargin_w.csv"  # Replace with your CSV file path
     df_cap_res_margin_results = pd.DataFrame()
     if os.path.isfile(file_path):
         # File exists, so read it
@@ -47,7 +47,7 @@ def read_annual_cap_res_margin():
 #####################################
 ##            Page Code            ##
 #####################################
-file_path_settings = "inputs\settings\genx_settings.yml" 
+file_path_settings = "inputs/settings/genx_settings.yml" 
 # Open the file and load the YAML content
 with open(file_path_settings, 'r') as file:
     settings = yaml.safe_load(file)
