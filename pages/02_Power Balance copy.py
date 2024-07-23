@@ -41,6 +41,7 @@ for zone in zone_ids.unique():
     new_col_names = {col: f"{re.match(r'^[a-zA-Z_]+', col).group(0)}" for col in zone_df.columns}
     zone_df.rename(columns = new_col_names, inplace=True)
     zone_df.rename(columns = {"VRE_Storage_Discharge":"Energy_Export_To_Grid", "VRE_Storage_Charge":"Energy_Import_From_Grid"}, inplace=True)
+    cols = zone_df.columns
 
     #zone_df["Transmission_NetExport"] *= -1
     zone_df["Time"] = range(1,zone_df.shape[0]+1)
@@ -55,13 +56,8 @@ selected_zone = st.selectbox(
 )
 selected_zone = int(selected_zone)
 
-zero_cols = [col for col in split_dfs[selected_zone].columns if (split_dfs[selected_zone][col] == 0).all()]
-split_dfs[selected_zone].drop(columns=zero_cols, inplace = True)
-cols = [col for col in split_dfs[selected_zone].columns if col != "Time"]
 
-selected_attributes1 = st.multiselect(label = "Select attributes to plot",
-                                       default=cols[0], options = cols)
-
+selected_attributes1 = st.multiselect(label = "Select attributes to plot", default=cols[0], options = cols)
 selected_attributes2 = selected_attributes1 + ["Time"]
 temp_df = split_dfs[selected_zone][selected_attributes2]
 
